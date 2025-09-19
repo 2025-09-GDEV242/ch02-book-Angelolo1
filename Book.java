@@ -35,24 +35,63 @@ class Book
 
     //Methods down below
     // Accessors
-    public String getAuthor() { return author; }
-    public String getTitle() { return title; }
-    public int getPages() { return pages; }
-    public String getPublisher() { return publisher; }
-    public int getYear() { return year; }
-    public String getIsbn() { return isbn; }
-    public double getPrice() { return price; }
+    public String getAuthor() { 
+        return author; 
+    }
+    
+    public String getTitle() { 
+        return title; 
+    }
+    
+    public int getPages() {
+        return pages; 
+    }
+    
+    public String getPublisher() { 
+        return publisher; 
+    }
+    
+    public int getYear() { 
+        return year; 
+    }
+    
+    public String getIsbn() { 
+        return isbn; 
+    }
+    
+    public double getPrice() {
+        return price; 
+    }
 
     // Mutators
-    public void setPages(int numPages) { pages = numPages; }
-    public void setPublisher(String pub) { publisher = pub; }
-    public void setYear(int y) { year = y; }
-    public void setIsbn(String code) { isbn = code; }
-    public void setPrice(double p) { price = p; }
+    public void setPages(int numPages) {
+        pages = numPages; 
+    }
+    
+    public void setPublisher(String pub) { 
+        publisher = pub; 
+    }
+    
+    public void setYear(int y) { 
+        year = y; 
+    }
+    
+    public void setIsbn(String code) {
+        isbn = code; 
+    }
+    
+    public void setPrice(double p) {
+        price = p; 
+    }
 
     // Print utilities
-    public void printAuthor() { System.out.println("Author: " + author); }
-    public void printTitle() { System.out.println("Title: " + title); }
+    public void printAuthor() {
+        System.out.println("Author: " + author);
+    }
+    
+    public void printTitle() { 
+        System.out.println("Title: " + title);
+    }
 
     // Print all details in a nice format
     public void printDetails() {
