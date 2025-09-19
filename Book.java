@@ -30,8 +30,8 @@ class Book
         courseText = isCourseText;
     }
 
-    //Methods down below
-    // Accessors
+    //methods down below
+    // accessors
     public String getAuthor() { 
         return author; 
     }
@@ -39,7 +39,7 @@ class Book
     public String getTitle() { 
         return title; 
     }
-    
+    //added accessors
     public int getPages() {
         return pages; 
     }
@@ -56,7 +56,7 @@ class Book
         return courseText; 
     }
 
-    // Mutators
+    // mutators
     public void setPages(int numPages) { 
         pages = numPages; 
     }
@@ -73,7 +73,7 @@ class Book
         borrowed = borrowed + 1; 
     }
 
-    // Print utilities
+    // print utilities
     public void printAuthor() {
         System.out.println("Author: " + author);
     }
@@ -82,7 +82,7 @@ class Book
         System.out.println("Title: " + title);
     }
 
-    // Print all details in a nice format
+    // print all details in a nice format
     public void printDetails() {
         String refOut = (refNumber.length() > 0) ? refNumber : "ZZZ";
         System.out.println("Title: " + title +
