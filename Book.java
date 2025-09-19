@@ -3,52 +3,65 @@
  * This might form part of a larger application such
  * as a library system, for instance.
  *
- * @author (Insert your name here.)
- * @version (Insert today's date here.)
+ * @author Angelo Martino
+ * @version 9/19/2025
  */
 class Book
 {
-    // The fields.
+    //fields
     private String author;
     private String title;
+    //added fields
     private int pages;
+    private String publisher;
+    private int year;
+    private String isbn;
+    private double price;
 
     /**
-     * Set the author and title fields when this object
-     * is constructed.
+     * Constructor to set values when object is created.
      */
-    public Book(String bookAuthor, String bookTitle, int numPages)
+    public Book(String bookAuthor, String bookTitle, int numPages, 
+                String pub, int y, String code, double p)
     {
         author = bookAuthor;
         title = bookTitle;
         pages = numPages;
+        publisher = pub;
+        year = y;
+        isbn = code;
+        price = p;
     }
 
-    // Add the methods here ...
-    //Accessors for String fields
-    public String getAuthor() {
-        return author;
-    }
+    //Methods down below
+    // Accessors
+    public String getAuthor() { return author; }
+    public String getTitle() { return title; }
+    public int getPages() { return pages; }
+    public String getPublisher() { return publisher; }
+    public int getYear() { return year; }
+    public String getIsbn() { return isbn; }
+    public double getPrice() { return price; }
 
-    public String getTitle() {
-        return title;
-    }
-    
-    //Print utility for private fields
-    public void printAuthor() {
-        System.out.println("Author: " + author);
-    }
+    // Mutators
+    public void setPages(int numPages) { pages = numPages; }
+    public void setPublisher(String pub) { publisher = pub; }
+    public void setYear(int y) { year = y; }
+    public void setIsbn(String code) { isbn = code; }
+    public void setPrice(double p) { price = p; }
 
-    public void printTitle() {
-        System.out.println("Title: " + title);
-    }   
+    // Print utilities
+    public void printAuthor() { System.out.println("Author: " + author); }
+    public void printTitle() { System.out.println("Title: " + title); }
 
-    public int getPages() {
-        return pages;
+    // Print all details in a nice format
+    public void printDetails() {
+        System.out.println("Title: " + title + 
+                           ", Author: " + author + 
+                           ", Pages: " + pages +
+                           ", Publisher: " + publisher +
+                           ", Year: " + year +
+                           ", ISBN: " + isbn +
+                           ", Price: $" + price);
     }
-
-    public void setPages(int numPages) {
-        pages = numPages;
-    }       
-    
 }
