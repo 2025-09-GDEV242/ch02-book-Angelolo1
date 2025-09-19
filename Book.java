@@ -13,24 +13,21 @@ class Book
     private String title;
     //added fields
     private int pages;
-    private String publisher;
-    private int year;
-    private String isbn;
-    private double price;
+    private String refNumber;
+    private int borrowed;
+    private boolean courseText;
 
     /**
      * Constructor to set values when object is created.
      */
-    public Book(String bookAuthor, String bookTitle, int numPages, 
-                String pub, int y, String code, double p)
+    public Book(String bookAuthor, String bookTitle, int numPages, boolean isCourseText)
     {
         author = bookAuthor;
         title = bookTitle;
         pages = numPages;
-        publisher = pub;
-        year = y;
-        isbn = code;
-        price = p;
+        refNumber = "";
+        borrowed = 0;
+        courseText = isCourseText;
     }
 
     //Methods down below
@@ -47,41 +44,33 @@ class Book
         return pages; 
     }
     
-    public String getPublisher() { 
-        return publisher; 
+    public String getRefNumber() { 
+        return refNumber; 
     }
     
-    public int getYear() { 
-        return year; 
+    public int getBorrowed() { 
+        return borrowed; 
     }
     
-    public String getIsbn() { 
-        return isbn; 
-    }
-    
-    public double getPrice() {
-        return price; 
+    public boolean isCourseText() { 
+        return courseText; 
     }
 
     // Mutators
-    public void setPages(int numPages) {
+    public void setPages(int numPages) { 
         pages = numPages; 
     }
     
-    public void setPublisher(String pub) { 
-        publisher = pub; 
+    public void setRefNumber(String ref) {
+        if (ref != null && ref.length() >= 3) {
+            refNumber = ref;
+        } else {
+            System.out.println("Error: refNumber must be at least 3 chars.");
+        }
     }
     
-    public void setYear(int y) { 
-        year = y; 
-    }
-    
-    public void setIsbn(String code) {
-        isbn = code; 
-    }
-    
-    public void setPrice(double p) {
-        price = p; 
+    public void borrow() { 
+        borrowed = borrowed + 1; 
     }
 
     // Print utilities
@@ -95,12 +84,12 @@ class Book
 
     // Print all details in a nice format
     public void printDetails() {
-        System.out.println("Title: " + title + 
-                           ", Author: " + author + 
+        String refOut = (refNumber.length() > 0) ? refNumber : "ZZZ";
+        System.out.println("Title: " + title +
+                           ", Author: " + author +
                            ", Pages: " + pages +
-                           ", Publisher: " + publisher +
-                           ", Year: " + year +
-                           ", ISBN: " + isbn +
-                           ", Price: $" + price);
+                           ", Ref#: " + refOut +
+                           ", Borrowed: " + borrowed +
+                           ", Course Text: " + (courseText ? "yes" : "no"));
     }
 }
